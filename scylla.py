@@ -206,6 +206,8 @@ class MyMainWindow(QMainWindow, scylla_gui.Ui_MainWindow):
         self.log(msg)
 
         node = self.nodes[0][0]
+        cmd = self.get_ssh(ssh_user, node, ssh_key, '~/scylladb/bin/scylla --version')
+        self.run_cmd(cmd)
         self.show_cluster_status(node)
 
 
